@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="material_blue_900">#FF1A237E</color>
+    <color name="material_blue_800">#FF283593</color>
+    <color name="grafite">#344E83</color>
+    <color name="blue">#157AD8</color>
+    <color name="green_br">#50823F</color>
+    <color name="dark_gray">#717f7f</color>
+    <color name="gray">#a0a0a0</color>
+    <color name="yellow_br">#EAB84B</color>
+    <color name="red_error_br">#DD4B39</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

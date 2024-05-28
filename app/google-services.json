@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "219987141919",
+    "project_id": "vote-2e1f7",
+    "storage_bucket": "vote-2e1f7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:219987141919:android:6419453b59bec9bea43c2a",
+        "android_client_info": {
+          "package_name": "br.com.eleicoes.vote"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBra6Te3cyA03uNW9tcx-B6mnmEvSJ8dLo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

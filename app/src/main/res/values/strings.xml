@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">vote</string>
+    <string name="logo_do_app">Logo do ap vote</string>
+    <string name="teclado_com_nome_vote">Teclado com o nome vote</string>
+    <string name="saudacao_signin">Olá, que bom que você está aqui!</string>
+    <string name="error_signin">Erro ao fazer login.</string>
+    <string name="user_icon">Ícone de usuário</string>
+    <string name="email_icon">Ícone de email</string>
+    <string name="email_label">Email</string>
+    <string name="user_label">Usuário</string>
+    <string name="icon_password">Ícone de senha</string>
+    <string name="icon_error">Ícone de erro</string>
+    <string name="label_password">Senha</string>
+    <string name="description_icon_visible">Ícone de visível</string>
+    <string name="description_icon_not_visible">Ícone de não visível</string>
+    <string name="button_signin">Entrar</string>
+    <string name="button_signup">Cadastrar</string>
+    <string name="create_account">Crie sua conta</string>
+    <string name="confirm_password">Confirmar senha</string>
+    <string name="label_signup">Cadastrar</string>
+</resources>
