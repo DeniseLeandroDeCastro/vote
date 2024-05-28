@@ -2,6 +2,7 @@ package br.com.eleicoes.vote.ui.screens
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -15,6 +16,8 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.EnhancedEncryption
+import androidx.compose.material.icons.filled.Visibility
+import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
@@ -31,6 +34,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -123,31 +128,73 @@ fun SignUpScreen(
                     OutlinedTextField(
                         value = uiState.password,
                         onValueChange = uiState.onPasswordChange,
-                        Modifier.fillMaxWidth(),
                         shape = RoundedCornerShape(30),
                         leadingIcon = {
                             Icon(
                                 Icons.Filled.EnhancedEncryption,
-                                contentDescription = stringResource(R.string.email_icon)
+                                contentDescription = stringResource(R.string.icon_password)
                             )
                         },
-                        label = {
-                            Text(text = "Senha")
+                        label = { Text(stringResource(R.string.label_password)) },
+                        trailingIcon = {
+                            val trailingIconModifier = Modifier.clickable {
+                                uiState.onTogglePasswordVisibility()
+                            }
+                            when (uiState.isShowPassword) {
+                                true -> {
+                                    Icon(
+                                        Icons.Filled.Visibility,
+                                        contentDescription = stringResource(R.string.description_icon_visible),
+                                        trailingIconModifier
+                                    )
+                                }
+
+                                else -> Icon(
+                                    Icons.Filled.VisibilityOff,
+                                    contentDescription = stringResource(R.string.description_icon_not_visible),
+                                    trailingIconModifier
+                                )
+                            }
+                        },
+                        visualTransformation = when (uiState.isShowPassword) {
+                            false -> PasswordVisualTransformation()
+                            true -> VisualTransformation.None
                         }
                     )
                     OutlinedTextField(
                         value = uiState.confirmPassword,
                         onValueChange = uiState.onConfirmPasswordChange,
+
                         Modifier.fillMaxWidth(),
                         shape = RoundedCornerShape(30),
                         leadingIcon = {
                             Icon(
                                 Icons.Filled.EnhancedEncryption,
-                                contentDescription = stringResource(R.string.user_icon)
-                            )
+                                contentDescription = stringResource(R.string.user_icon)) },
+                        label = { Text(text = stringResource(R.string.confirm_password)) },
+                        trailingIcon = {
+                            val trailingIconModifier = Modifier.clickable {
+                                uiState.onTogglePasswordVisibility()
+                            }
+                            when (uiState.isShowPassword) {
+                                true -> {
+                                    Icon(
+                                        Icons.Filled.Visibility,
+                                        contentDescription = stringResource(R.string.description_icon_visible),
+                                        trailingIconModifier
+                                    )
+                                }
+
+                                else -> Icon(
+                                    Icons.Filled.VisibilityOff,
+                                    contentDescription = stringResource(R.string.description_icon_not_visible),
+                                    trailingIconModifier
+                                )
+                            }
                         },
-                        label = {
-                            Text(text = stringResource(R.string.confirm_password))
+                        visualTransformation = when (uiState.isShowPassword) {
+                            false -> PasswordVisualTransformation()
+                            true -> VisualTransformation.None
                         }
                     )
                     Button(
